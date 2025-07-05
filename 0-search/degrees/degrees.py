@@ -92,7 +92,25 @@ def shortest_path(source, target):
     If no possible path, returns None.
     """
 
-    # TODO
+    # declarate de start node, frontier and a list of explored nodes
+    start = Node(state=source, parent=None, action=None)
+    frontier = QueueFrontier()
+    frontier.add(start)
+    explored = set()
+
+    
+    while not frontier.empty():
+        node = frontier.remove()
+        if node.state == target:
+            path = []
+            while node.parent is not None:
+                path.append((node.action, node.state))
+                node = node.parent
+            path.reverse()
+            return path
+
+       
+
     raise NotImplementedError
 
 
