@@ -1,4 +1,4 @@
-# 🧠 harvard_ia
+# 🧠 CS50’s Introduction to Artificial Intelligence with Python
 
 This repository contains my personal progress and solutions for the course **[CS50’s Introduction to Artificial Intelligence with Python](https://www.edx.org/learn/artificial-intelligence/harvard-university-cs50-s-introduction-to-artificial-intelligence-with-python)**, offered by Harvard University.
 
@@ -24,12 +24,25 @@ This repository is licensed under the [CC BY-NC-ND 4.0](https://creativecommons.
 
 Each folder corresponds to a main topic in the course. Inside each, you will find one or more exercises:
 
-**[0 - Search](./0-search)**
+**[0 - Search](./0-search)**  
+This lesson introduces fundamental search algorithms and problem-solving strategies used in AI:
 
-This lesson introduces uninformed and informed search algorithms. It focuses on representing problems as graphs and exploring paths using algorithms like Breadth-First Search (BFS) and Depth-First Search (DFS). These techniques are essential for solving search problems efficiently in AI.
+- **Search problem definition**: start state, goal state, successor function, and cost metrics.
+- **Uninformed (blind) search**:
+  - **Depth‑First Search (DFS)**: explores one branch fully using a stack (LIFO); not guaranteed to be optimal or complete in infinite graphs.
+  - **Breadth‑First Search (BFS)**: explores layer by layer using a queue (FIFO); guaranteed to find the shortest path (in terms of number of actions) and complete in finite graphs.
+- **Informed (heuristic) search**:
+  - **Greedy Best‑First Search**: uses a heuristic function `h(n)` to estimate closeness to the goal.
+  - **A\***: combines path cost and heuristic (`f(n) = g(n) + h(n)`), with admissible and consistent heuristics ensuring optimality and completeness.
+- **Other strategies introduced**:
+  - **Iterative Deepening DFS (IDDFS)**: combines the memory efficiency of DFS with the completeness of BFS.
+  - Overview of **Bidirectional Search**, **Uniform‑Cost Search**, and **Alpha‑Beta Pruning** as strategies applied in different contexts.
+
+These concepts are essential for modeling problems as graphs and implementing search strategies using data structures like stacks, queues, and priority queues.
 
 **Exercises:**
-- [Degrees](./0-search/degrees)
+- [Degrees](./0-search/degrees)  
+  Implements BFS to find the shortest "degree of separation" between two actors based on shared movie roles.
 
 **1 - Knowledge**  
 _(to be completed)_
