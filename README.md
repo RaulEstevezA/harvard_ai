@@ -1,6 +1,6 @@
 # 🧠 harvard_ia
 
-This repository contains my personal progress and solutions for the course **CS50’s Introduction to Artificial Intelligence with Python**, offered by Harvard University.
+This repository contains my personal progress and solutions for the course **[CS50’s Introduction to Artificial Intelligence with Python](https://www.edx.org/learn/artificial-intelligence/harvard-university-cs50-s-introduction-to-artificial-intelligence-with-python)**, offered by Harvard University.
 
 The course explores foundational concepts in artificial intelligence, focusing on practical implementation using Python. It covers topics such as graph search algorithms, knowledge representation, logic, planning, learning, and natural language processing.
 
