@@ -98,7 +98,7 @@ def shortest_path(source, target):
     frontier.add(start)
     explored = set()
 
-    
+    # start the loop for find the target
     while not frontier.empty():
         node = frontier.remove()
         if node.state == target:
@@ -109,9 +109,17 @@ def shortest_path(source, target):
             path.reverse()
             return path
 
-       
+        # if node isn't the target, add to explored
+        explored.add(node.state)
 
-    raise NotImplementedError
+        # explore all neighbors
+        for movie_id, person_id in neighbors_for_person(node.state):
+            if person_id not in explored and not frontier.contains_state(person_id):
+                child = Node(state=person_id, parent=node, action=movie_id)
+                frontier.add(child)
+
+    # return none if don't match
+    return None
 
 
 def person_id_for_name(name):
