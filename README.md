@@ -24,7 +24,8 @@ This repository is licensed under the [CC BY-NC-ND 4.0](https://creativecommons.
 
 Each folder corresponds to a main topic in the course. Inside each, you will find one or more exercises:
 
-**[0 - Search](./0-search)**  
+**[0 - Search](./0-search)** 
+ 
 This lesson introduces fundamental search algorithms and problem-solving strategies used in AI:
 
 - **Search problem definition**: start state, goal state, successor function, and cost metrics.
