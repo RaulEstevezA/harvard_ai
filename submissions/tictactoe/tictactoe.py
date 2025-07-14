@@ -38,19 +38,29 @@ def actions(board):
     """
 
     # return a set of all options
-    return {(x, y) for x, row  in enumerate(board) for y, cell in enumerate(row) if cell == EMPTY}
+    return {(x, y) for x, row in enumerate(board) for y, cell in enumerate(row) if cell == EMPTY}
 
 
 def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
+    
+    i, j = action
 
-    # create a clone of the board to avoid mutating the original
+    # Check if the action is within bounds
+    if not (0 <= i < 3 and 0 <= j < 3):
+        raise Exception("Invalid move: Out of bounds")
+
+    # Check if the cell is already occupied
+    if board[i][j] != EMPTY:
+        raise Exception("Invalid move: Cell is already occupied")
+
+    # Clone the board to avoid modifying the original
     move_board = copy.deepcopy(board)
 
-    # assign player's move in the board
-    move_board[action[0]][action[1]] = player(board)
+    # Apply the move
+    move_board[i][j] = player(board)
 
     return move_board
 
@@ -127,6 +137,9 @@ def minimax(board):
     Returns the optimal action for the current player on the board.
     """
 
+    if terminal(board):
+        return None
+
     # determine current player
     actual_player = player(board)
 
@@ -167,7 +180,6 @@ def max_value(board):
     # we initialize it with the lowest possible value  
     value = float('-inf')  
 
-
     # we calculate the minimum value that the opponent would obtain if we do this action
     for action in actions(board):
         value = max(value, min_value(result(board, action)))
@@ -185,10 +197,8 @@ def min_value(board):
     if terminal(board):
         return utility(board)
     
-
     # we initialize it with the lowest possible value  
     value = float('inf')  
-
 
     # we calculate the minimum value that the opponent would obtain if we do this action
     for action in actions(board):

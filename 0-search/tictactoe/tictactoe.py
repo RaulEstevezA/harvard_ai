@@ -46,11 +46,21 @@ def result(board, action):
     Returns the board that results from making move (i, j) on the board.
     """
 
-    # create a clone of the board to avoid mutating the original
+    i, j = action
+
+    # Check if the action is within bounds
+    if not (0 <= i < 3 and 0 <= j < 3):
+        raise Exception("Invalid move: Out of bounds")
+
+    # Check if the cell is already occupied
+    if board[i][j] != EMPTY:
+        raise Exception("Invalid move: Cell is already occupied")
+
+    # Clone the board to avoid modifying the original
     move_board = copy.deepcopy(board)
 
-    # assign player's move in the board
-    move_board[action[0]][action[1]] = player(board)
+    # Apply the move
+    move_board[i][j] = player(board)
 
     return move_board
 
@@ -126,6 +136,10 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
+
+    # if game finished, return None
+    if terminal(board):
+        return None
 
     # determine current player
     actual_player = player(board)
