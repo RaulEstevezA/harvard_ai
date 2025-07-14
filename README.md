@@ -44,6 +44,8 @@ These concepts are essential for modeling problems as graphs and implementing se
 **Exercises:**
 - [Degrees](./0-search/degrees)  
   Implements BFS to find the shortest "degree of separation" between two actors based on shared movie roles.
+- [Tic Tac Toe](./0-search/tictactoe)  
+  Implements an unbeatable AI using the Minimax algorithm to play a perfect game of Tic Tac Toe.
 
 **1 - Knowledge**  
 _(to be completed)_
