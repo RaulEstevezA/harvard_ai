@@ -45,7 +45,7 @@ You can play against the AI by selecting whether to be X or O.
 
 ## Status
 
-✔️ Completed and tested with full Minimax AI integration.
+Completed and tested with full Minimax AI integration.
 
 ## Author
 

@@ -38,7 +38,7 @@ These concepts are essential for modeling problems as graphs and implementing se
 - [Tic Tac Toe](./0-search/tictactoe)  
   Implements an unbeatable AI using the Minimax algorithm to play a perfect game of Tic Tac Toe.
 
-**[1 - Knowledge](./0-search)**  
+**[1 - Knowledge](./1-knowledge)**  
 
 This unit introduces propositional logic as a tool to represent knowledge and perform inference in artificial intelligence. It focuses on how an agent can deduce facts from known rules and facts using logical reasoning, rather than brute-force search.
 
