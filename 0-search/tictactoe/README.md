@@ -1,10 +1,10 @@
-# 🎮 Tic Tac Toe
+# Tic Tac Toe
 
 This project is the second exercise of the first lesson, "0 Search", from the course *CS50’s Introduction to Artificial Intelligence with Python*.
 
 In this exercise, an AI agent is implemented to play optimally in a game of Tic Tac Toe using the **Minimax algorithm**. The AI evaluates possible moves to ensure it never loses and plays the best possible action for its turn.
 
-## 🚀 How it Works
+## How it Works
 
 The program simulates a standard 3x3 Tic Tac Toe board:
 
@@ -24,25 +24,29 @@ python3 runner.py
 
 You can play against the AI by selecting whether to be X or O.
 
-> ⚠️ **Note**: This exercise explicitly forbids any modifications to `runner.py`.  
+> **Note**: This exercise explicitly forbids any modifications to `runner.py`.  
 > All logic must be implemented in `tictactoe.py` only.
 
-## 🖼️ Example Output
+## Example Output
 
 ![Tic Tac Toe Output](../../images/tictactoe.png)
 
-## 📂 Files
+## Files
 
 - `tictactoe.py`: Core logic (state, actions, result, winner, minimax).
 - `runner.py`: Graphical interface using Pygame (not to be modified).
 - `OpenSans-Regular.ttf`: Font used by the graphical interface.
 - `requirements.txt`: List of required Python packages (mainly `pygame`).
 
-## 🔗 Direct Access
+## Direct Access
 
-- 👉 [**View the full source code**](./tictactoe.py)
-- 🔙 [Back to main README](../../README.md)
+- [**View the full source code**](./tictactoe.py)
+- [Back to main README](../../README.md)
 
-## ✅ Status
+## Status
 
 ✔️ Completed and tested with full Minimax AI integration.
+
+## Author
+
+This project was completed by [**Raul Estevez**](https://raulesteveza.github.io) as part of the CS50 AI course assignments.
