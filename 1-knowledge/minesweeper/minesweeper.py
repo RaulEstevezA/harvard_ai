@@ -141,7 +141,10 @@ class Sentence():
         Updates internal knowledge representation given the fact that
         a cell is known to be safe.
         """
-        raise NotImplementedError
+        
+        # eliminate the cell from self.cells
+        if cell in self.cells:
+             self.cells.discard(cell)
 
 
 class MinesweeperAI():
