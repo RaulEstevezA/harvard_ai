@@ -123,12 +123,18 @@ class Sentence():
             return self.cells
         return set()
 
+
     def mark_mine(self, cell):
         """
         Updates internal knowledge representation given the fact that
         a cell is known to be a mine.
         """
-        raise NotImplementedError
+        
+        # eliminate the mine from self.cells and decrease the count by 1
+        if cell in self.cells:
+             self.cells.discard(cell)
+             self.count -= 1
+
 
     def mark_safe(self, cell):
         """
