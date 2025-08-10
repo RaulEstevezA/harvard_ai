@@ -216,7 +216,7 @@ class MinesweeperAI():
         
         # 3) add a new sentence to the AI's knowledge base based on the value of `cell` and `count`
         # we create all the data we will use
-        posibilites = [(-1, -1) , (-1, 0),  (-1, +1), ( 0, -1), ( 0, +1), (+1, -1), (+1, 0), (+1, +1)]
+        posibilites = [(-1, -1) , (-1, 0),  (-1, +1), (0, -1), (0, +1), (+1, -1), (+1, 0), (+1, +1)]
         candidate_neighbours = set()
         new_count = count
 
@@ -244,7 +244,7 @@ class MinesweeperAI():
         next_step = True
         while next_step:
 
-            #flag to indicate if new information is found in this iteration
+            # flag to indicate if new information is found in this iteration
             next_step = False
 
             # search for new information in the knowledge base
@@ -252,14 +252,14 @@ class MinesweeperAI():
 
                 # if the knowledge indicates that these cells are mines
                 if sentence.known_mines():
-                    for mines in sentence.known_mines():
+                    for mines in set(sentence.known_mines()):
                         if mines not in self.mines:
                             self.mark_mine(mines)
                             next_step = True
 
                 # if the knowledge indicates that these cells are safe
                 if sentence.known_safes():
-                    for safes in sentence.known_safes():
+                    for safes in set(sentence.known_safes()):
                         if safes not in self.safes:
                             self.mark_safe(safes)
                             next_step = True
@@ -321,36 +321,36 @@ class MinesweeperAI():
                 errors when correcting the exercise.
             """
             if new_sentence:
-                    next_step = True
-                    while next_step:
+                next_step = True
+                while next_step:
 
-                        #flag to indicate if new information is found in this iteration
-                        next_step = False
+                    #flag to indicate if new information is found in this iteration
+                    next_step = False
 
-                        # search for new information in the knowledge base
-                        for sentence in list(self.knowledge):
+                    # search for new information in the knowledge base
+                    for sentence in list(self.knowledge):
 
-                            # if the knowledge indicates that these cells are mines
-                            if sentence.known_mines():
-                                for mines in sentence.known_mines():
-                                    if mines not in self.mines:
-                                        self.mark_mine(mines)
-                                        next_step = True
+                        # if the knowledge indicates that these cells are mines
+                        if sentence.known_mines():
+                            for mines in set(sentence.known_mines()):
+                                if mines not in self.mines:
+                                    self.mark_mine(mines)
+                                    next_step = True
 
-                            # if the knowledge indicates that these cells are safe
-                            if sentence.known_safes():
-                                for safes in sentence.known_safes():
-                                    if safes not in self.safes:
-                                        self.mark_safe(safes)
-                                        next_step = True
+                        # if the knowledge indicates that these cells are safe
+                        if sentence.known_safes():
+                            for safes in set(sentence.known_safes()):
+                                if safes not in self.safes:
+                                    self.mark_safe(safes)
+                                    next_step = True
 
-                    # drop empty sentences other time    
-                    new_list = []
-                    for s in self.knowledge:
-                        if len(s.cells) > 0:
-                                new_list.append(s)
-            
-                    self.knowledge = new_list
+                # drop empty sentences other time    
+                new_list = []
+                for s in self.knowledge:
+                    if len(s.cells) > 0:
+                            new_list.append(s)
+        
+                self.knowledge = new_list
 
 
     def make_safe_move(self):
@@ -380,8 +380,13 @@ class MinesweeperAI():
             2) are not known to be mines
         """
 
+        # all possible cells on the board
+        candidates = {
+            (i, j) for i in range(self.height) for j in range(self.width)
+            }
+
         # obtain moves
-        candidates = (self.cells - self.moves_made) - self.mines
+        candidates -= (self.moves_made | self.mines)
 
         # do one random move if can, else return None
         if candidates:
