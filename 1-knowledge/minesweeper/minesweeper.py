@@ -208,7 +208,7 @@ class MinesweeperAI():
         #2) mark the cell as safe
         self.mark_safe(cell)
         
-        #3) add a new sentence to the AI's knowledge base based on the value of `cell` and `count`
+        # 3) add a new sentence to the AI's knowledge base based on the value of `cell` and `count`
         # we create all the data we will use
         posibilites = [(-1, -1) , (-1, 0),  (-1, +1), ( 0, -1), ( 0, +1), (+1, -1), (+1, 0), (+1, +1)]
         candidate_neighbours = set()
@@ -234,8 +234,117 @@ class MinesweeperAI():
             new_sentence = Sentence(filtered_neighbours, new_count)
             self.knowledge.append(new_sentence)
 
+        # 4) mark any additional cells as safe or as mines if it can be concluded based on the AI's knowledge base
+        next_step = True
+        while next_step:
+
+            #flag to indicate if new information is found in this iteration
+            next_step = False
+
+            # search for new information in the knowledge base
+            for sentence in list(self.knowledge):
+
+                # if the knowledge indicates that these cells are mines
+                if sentence.known_mines():
+                    for mines in sentence.known_mines():
+                        if mines not in self.mines:
+                            self.mark_mine(mines)
+                            next_step = True
+
+                # if the knowledge indicates that these cells are safe
+                if sentence.known_safes():
+                    for safes in sentence.known_safes():
+                        if safes not in self.safes:
+                            self.mark_safe(safes)
+                            next_step = True
+
+        # 5) add any new sentences to the AI's knowledge base if they can be inferred from existing knowledge
+        # clean up: drop empty sentences
+        new_list = []
+        for s in self.knowledge:
+            if len(s.cells) > 0:
+                    new_list.append(s)
+            
+        self.knowledge = new_list
+        new_sentence = True
+
+        
+        while new_sentence:
+            new_sentence = False
+
+            # copy to iterate safely
+            new_knowledge = self.knowledge.copy()
+
+            for x in range(len(new_knowledge)):
+                for i in range(x + 1, len(new_knowledge)):
+                    s1 = new_knowledge[x]
+                    s2 = new_knowledge[i]
+
+                    # skip empty just in case
+                    if len(s1.cells) == 0 or len(s2.cells) == 0:
+                        continue
+
+                    # case a    
+                    if s1.cells.issubset(s2.cells):
+                        new_cells = s2.cells - s1.cells
+                        new_count = s2.count - s1.count
+
+                        if new_cells and 0 <= new_count <= len(new_cells):
+                            # avoid duplicates
+                            if not any(s.cells == new_cells and s.count == new_count for s in self.knowledge):
+                                self.knowledge.append(Sentence(new_cells, new_count))
+                                new_sentence = True
+
+                    # case b
+                    if s2.cells.issubset(s1.cells):
+                        new_cells = s1.cells - s2.cells
+                        new_count = s1.count - s2.count
+
+                        if new_cells and 0 <= new_count <= len(new_cells):
+                            # avoid duplicates
+                            if not any(s.cells == new_cells and s.count == new_count for s in self.knowledge):
+                                self.knowledge.append(Sentence(new_cells, new_count))
+                                new_sentence = True
 
 
+            # if added new sentence, need do other time step 4
+            """
+                If we modify the statements, we must update the knowledge base and 
+                remove duplicates again. This step isn't optimal; it would be better 
+                to create a definition and refer to it constantly, but it can cause 
+                errors when correcting the exercise.
+            """
+            if new_sentence:
+                    next_step = True
+                    while next_step:
+
+                        #flag to indicate if new information is found in this iteration
+                        next_step = False
+
+                        # search for new information in the knowledge base
+                        for sentence in list(self.knowledge):
+
+                            # if the knowledge indicates that these cells are mines
+                            if sentence.known_mines():
+                                for mines in sentence.known_mines():
+                                    if mines not in self.mines:
+                                        self.mark_mine(mines)
+                                        next_step = True
+
+                            # if the knowledge indicates that these cells are safe
+                            if sentence.known_safes():
+                                for safes in sentence.known_safes():
+                                    if safes not in self.safes:
+                                        self.mark_safe(safes)
+                                        next_step = True
+
+                    # drop empty sentences other time    
+                    new_list = []
+                    for s in self.knowledge:
+                        if len(s.cells) > 0:
+                                new_list.append(s)
+            
+                    self.knowledge = new_list
 
 
     def make_safe_move(self):
