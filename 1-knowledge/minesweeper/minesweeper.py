@@ -95,11 +95,14 @@ class Sentence():
         self.cells = set(cells)
         self.count = count
 
+
     def __eq__(self, other):
         return self.cells == other.cells and self.count == other.count
 
+
     def __str__(self):
         return f"{self.cells} = {self.count}"
+
 
     def known_mines(self):
         """
@@ -168,6 +171,7 @@ class MinesweeperAI():
         # List of sentences about the game known to be true
         self.knowledge = []
 
+
     def mark_mine(self, cell):
         """
         Marks a cell as a mine, and updates all knowledge
@@ -177,6 +181,7 @@ class MinesweeperAI():
         for sentence in self.knowledge:
             sentence.mark_mine(cell)
 
+
     def mark_safe(self, cell):
         """
         Marks a cell as safe, and updates all knowledge
@@ -185,6 +190,7 @@ class MinesweeperAI():
         self.safes.add(cell)
         for sentence in self.knowledge:
             sentence.mark_safe(cell)
+
 
     def add_knowledge(self, cell, count):
         """
@@ -356,7 +362,15 @@ class MinesweeperAI():
         This function may use the knowledge in self.mines, self.safes
         and self.moves_made, but should not modify any of those values.
         """
-        raise NotImplementedError
+
+        # obtain the safes moves
+        candidates = self.safes - self.moves_made
+        
+        # do one random safe move or return None
+        if candidates:
+            return random.choice(list(candidates))
+        return None
+
 
     def make_random_move(self):
         """
@@ -365,4 +379,11 @@ class MinesweeperAI():
             1) have not already been chosen, and
             2) are not known to be mines
         """
-        raise NotImplementedError
+
+        # obtain moves
+        candidates = (self.cells - self.moves_made) - self.mines
+
+        # do one random move if can, else return None
+        if candidates:
+            return random.choice(list(candidates))
+        return None
