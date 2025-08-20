@@ -57,7 +57,28 @@ def transition_model(corpus, page, damping_factor):
     linked to by `page`. With probability `1 - damping_factor`, choose
     a link at random chosen from all pages in the corpus.
     """
-    raise NotImplementedError
+
+    diferent_pages = len(corpus)            # number of pages por base %
+    number_of_links = len(corpus[page])     # number of links in the page
+
+    # if haven't links, all pages have the same %
+    if number_of_links == 0:
+        percent = {pages: 1 / diferent_pages for pages in corpus }
+
+
+    else:
+        percent_base = (1 - damping_factor) / diferent_pages    # calculate base %
+        percent_extra = damping_factor / number_of_links        # calculate % for any link
+
+        # initialize min % of all pages
+        percent = {pages: percent_base for pages in corpus}
+
+        # give all extra %
+        for dates in corpus[page]:
+            percent[dates] += percent_extra
+    
+
+    return percent
 
 
 def sample_pagerank(corpus, damping_factor, n):
@@ -69,7 +90,32 @@ def sample_pagerank(corpus, damping_factor, n):
     their estimated PageRank value (a value between 0 and 1). All
     PageRank values should sum to 1.
     """
-    raise NotImplementedError
+
+    # initialize dictionary
+    percent = {pages: 0 for pages in corpus}
+
+    # firsth election
+    current_election = random.choice(list(percent))
+    percent[current_election] += 1
+
+    # the other elections taking into account the percentage
+    for elections in range(n - 1):
+        probability = transition_model(corpus, current_election, damping_factor)    # obtain probability
+
+        # choose one taking into account the probability
+        election = random.choices(
+            list(probability.keys()),
+            list(probability.values()),
+            k=1) [0]
+        
+        percent[election] += 1  # add the choosen one
+        current_election = election
+
+    # converse the counts into %
+    for dates in percent:
+        percent[dates] /= n
+
+    return percent
 
 
 def iterate_pagerank(corpus, damping_factor):
