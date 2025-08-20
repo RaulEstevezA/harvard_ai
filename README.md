@@ -63,7 +63,7 @@ These concepts are foundational for building agents that reason with certainty a
   Builds an AI agent that plays the game of Minesweeper using logical deduction. The AI maintains a knowledge base of safe and unsafe cells and deduces new information as it uncovers the board.
   
 
-**2 - Inference**  
+**2 - Uncertainty**  
 _(to be completed)_
 
 **3 - Optimization**  
