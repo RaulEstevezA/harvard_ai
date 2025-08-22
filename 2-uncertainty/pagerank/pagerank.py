@@ -127,7 +127,35 @@ def iterate_pagerank(corpus, damping_factor):
     their estimated PageRank value (a value between 0 and 1). All
     PageRank values should sum to 1.
     """
-    raise NotImplementedError
+    
+    diferent_pages = len(corpus)    # number of pages
+    percent = {pages: 1/diferent_pages for pages in corpus} # first distribution of percentages
+
+    # infinite loop to assign new percentages and check for differences
+    while True:
+        percent_new = {pages: (1 - damping_factor) / diferent_pages for pages in corpus} # min % on each page
+        
+        for pages in corpus:
+            links = len(corpus[pages]) # number of links on each page
+            
+            # if there are not links
+            if links == 0:
+                value_to_share = (damping_factor * percent[pages])/diferent_pages # obtain % for all pages
+                for p in corpus:
+                    percent_new[p] += value_to_share # sum % on each page
+
+            else:
+                value_to_share = (damping_factor * percent[pages])/links #obtain % for all links
+                for data in corpus[pages]:
+                    percent_new[data] += value_to_share # sum % on each page
+
+        # check changes
+        diff_max = max( abs(percent_new[p] - percent[p]) for p in corpus )
+        if diff_max < 0.001:
+            return percent_new 
+        
+        # if do another loop, asign to percent the new values
+        percent = percent_new
 
 
 if __name__ == "__main__":
