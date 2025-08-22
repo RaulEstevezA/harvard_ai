@@ -61,10 +61,29 @@ These concepts are foundational for building agents that reason with certainty a
 
 - [Minesweeper](./1-knowledge/minesweeper)  
   Builds an AI agent that plays the game of Minesweeper using logical deduction. The AI maintains a knowledge base of safe and unsafe cells and deduces new information as it uncovers the board.
-  
 
-**2 - Uncertainty**  
-_(to be completed)_
+**[2 - Uncertainty](./2-uncertainty)**  
+
+This unit introduces probabilistic reasoning as a fundamental tool for artificial intelligence. Unlike propositional logic, which deals with absolute truths, probabilistic models capture uncertainty and allow agents to make informed decisions in situations where outcomes are not deterministic.
+
+- **Probability basics**:
+  - Random variables and probability distributions.  
+  - Conditional probability: `P(A|B)` and its role in reasoning under uncertainty.  
+  - Bayes’ Rule as a method for updating beliefs given new evidence.  
+
+- **Inference with probabilities**:
+  - The concept of *joint probability distributions* and marginalization.  
+  - Representing uncertainty about causes and effects in complex environments.  
+
+- **Applications in AI**:
+  - Probabilistic models for reasoning under incomplete information.  
+  - Foundations for algorithms in natural language processing, computer vision, and decision making under risk.  
+
+These concepts are foundational for building agents that can operate effectively in real-world environments, where uncertainty is inevitable.
+
+**Exercises:**
+- [PageRank](./2-uncertainty/pagerank)  
+  Implements Google’s PageRank algorithm using two approaches: sampling (simulating a random surfer) and iteration (repeatedly redistributing probabilities until convergence). The project demonstrates how probability distributions can represent the importance of web pages.  
 
 **3 - Optimization**  
 _(to be completed)_
