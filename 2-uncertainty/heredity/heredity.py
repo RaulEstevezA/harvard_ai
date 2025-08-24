@@ -139,7 +139,87 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         * everyone in set `have_trait` has the trait, and
         * everyone not in set` have_trait` does not have the trait.
     """
-    raise NotImplementedError
+
+    # start with overall probability = 1
+    probability = 1.0
+
+    # obtain mutation probability
+    mutation = PROBS["mutation"]
+
+    # definition for help later about transmision
+    def probability_transmit(g):
+        if g == 2:
+            return 1 - mutation
+        elif g == 1:
+            return 0.5
+        else:  # g == 0
+            return mutation
+
+    # loop over every person in the dataset
+    for person in people:
+
+        # determine how many genes this person has in the current assignment
+        if person in two_genes:
+            num_genes = 2
+        elif person in one_gene:
+            num_genes = 1
+        else:
+            num_genes = 0
+
+        # determine whether this person is assigned the trait
+        trait_bool = False
+        if person in have_trait:
+            trait_bool = True
+
+        # get names of parents (if any)
+        mother = people[person]["mother"]
+        father = people[person]["father"]
+
+        # if person has no parents, use unconditional gene probability
+        if mother is None and father is None:
+            probability_genes = PROBS["gene"][num_genes]
+            
+        # if person have parents, calculate probability based on parents’ transmissions
+        else:
+            if mother in two_genes:
+                mother_gene = 2
+            elif mother in one_gene:
+                mother_gene = 1
+            else:
+                mother_gene = 0
+
+            if father in two_genes:
+                father_gene = 2
+            elif father in one_gene:
+                father_gene = 1
+            else:
+                father_gene = 0
+
+            # probability each parent transmits the gene(call helper definition)
+            probability_from_mother = probability_transmit(mother_gene)
+            probability_from_father = probability_transmit(father_gene)
+
+            # probability that child ends up with num_genes
+            if num_genes == 2:
+                probability_genes = probability_from_mother * probability_from_father
+            elif num_genes == 1:
+                probability_genes = (
+                    probability_from_mother * (1 - probability_from_father)
+                    + (1 - probability_from_mother) * probability_from_father
+                )
+            else:  # num_genes == 0
+                probability_genes = (1 - probability_from_mother) * (1 - probability_from_father)
+
+        # probability of this person showing trait given num_genes
+        probability_trait = PROBS["trait"][num_genes][trait_bool]
+
+        # multiply into the overall joint probability
+        probability *= (probability_genes * probability_trait)
+
+    # return the probability
+    return probability
+            
+
 
 
 def update(probabilities, one_gene, two_genes, have_trait, p):
