@@ -85,7 +85,10 @@ These concepts are foundational for building agents that can operate effectively
 - [PageRank](./2-uncertainty/pagerank)  
   Implements Google’s PageRank algorithm using two approaches: sampling (simulating a random surfer) and iteration (repeatedly redistributing probabilities until convergence). The project demonstrates how probability distributions can represent the importance of web pages.  
 
-**3 - Optimization**  
+- [Heredity](./2-uncertainty/heredity)  
+  Models genetic inheritance and trait expression in families. The program calculates joint probabilities that individuals have 0, 1, or 2 copies of a gene, and whether they exhibit a trait, taking into account inheritance from parents, mutation rates, and conditional probabilities. Results are normalized to produce valid probability distributions for each person.
+
+**[2 - Optimization](./3-optimization)**  
 _(to be completed)_
 
 **4 - Learning**  

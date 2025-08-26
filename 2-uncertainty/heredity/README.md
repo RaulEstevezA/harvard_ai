@@ -65,6 +65,9 @@ Lily
 
 *(Values may vary slightly depending on floating-point precision.)*
 
+
+![Program Output](../../images/heredity.png)
+
 ## Files Included
 - **heredity.py** → The main program implementing the algorithm.
 - **family0.csv**, **family1.csv**, **family2.csv** → Sample datasets to test the program.
