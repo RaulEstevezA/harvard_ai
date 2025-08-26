@@ -79,3 +79,7 @@ Lily
 - Updating probabilities across multiple hypotheses.
 - **Normalization** of probability distributions.
 - Iterating over all possible combinations using `powerset`.
+
+## Author
+
+This project was completed by [**Raul Estevez**](https://raulesteveza.github.io) as part of the CS50 AI course assignments.
