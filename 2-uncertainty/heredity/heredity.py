@@ -250,7 +250,18 @@ def normalize(probabilities):
     Update `probabilities` such that each probability distribution
     is normalized (i.e., sums to 1, with relative proportions the same).
     """
-    raise NotImplementedError
+    
+    # go through all people in probabilities
+    for person in probabilities:
+        # normalize gene
+        total_gene = sum(probabilities[person]["gene"].values())
+        for g in probabilities[person]["gene"]:
+            probabilities[person]["gene"][g] /= total_gene
+
+        # normalize trait
+        total_trait = sum(probabilities[person]["trait"].values())
+        for t in probabilities[person]["trait"]:
+            probabilities[person]["trait"][t] /= total_trait     
 
 
 if __name__ == "__main__":
