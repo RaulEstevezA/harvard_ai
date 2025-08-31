@@ -15,6 +15,7 @@ class CrosswordCreator():
             for var in self.crossword.variables
         }
 
+
     def letter_grid(self, assignment):
         """
         Return 2D array representing a given assignment.
@@ -31,6 +32,7 @@ class CrosswordCreator():
                 letters[i][j] = word[k]
         return letters
 
+
     def print(self, assignment):
         """
         Print crossword assignment to the terminal.
@@ -43,6 +45,7 @@ class CrosswordCreator():
                 else:
                     print("█", end="")
             print()
+
 
     def save(self, assignment, filename):
         """
@@ -85,6 +88,7 @@ class CrosswordCreator():
 
         img.save(filename)
 
+
     def solve(self):
         """
         Enforce node and arc consistency, and then solve the CSP.
@@ -92,6 +96,7 @@ class CrosswordCreator():
         self.enforce_node_consistency()
         self.ac3()
         return self.backtrack(dict())
+
 
     def enforce_node_consistency(self):
         """
@@ -126,7 +131,37 @@ class CrosswordCreator():
         Return True if a revision was made to the domain of `x`; return
         False if no revision was made.
         """
-        raise NotImplementedError
+        
+        overlap = self.crossword.overlaps[(x, y)]
+        deleted = False
+        to_remove = set()
+
+        # check overlap
+        if overlap is None:
+            return False              
+
+        # asign indices of the overlap
+        i, j = overlap
+
+        # check all word in domains
+        for xword in self.domains[x]:
+            need_remove = True
+            for yword in self.domains[y]:
+                if xword[i] == yword[j]:
+                    need_remove = False
+                    break
+            if need_remove:
+                to_remove.add(xword)
+                
+        # if need remove words
+        if to_remove:
+            for w in to_remove:
+                self.domains[x].remove(w)
+            deleted = True
+
+        # return true or false
+        return deleted
+
 
     def ac3(self, arcs=None):
         """
@@ -139,6 +174,7 @@ class CrosswordCreator():
         """
         raise NotImplementedError
 
+
     def assignment_complete(self, assignment):
         """
         Return True if `assignment` is complete (i.e., assigns a value to each
@@ -146,12 +182,14 @@ class CrosswordCreator():
         """
         raise NotImplementedError
 
+
     def consistent(self, assignment):
         """
         Return True if `assignment` is consistent (i.e., words fit in crossword
         puzzle without conflicting characters); return False otherwise.
         """
         raise NotImplementedError
+
 
     def order_domain_values(self, var, assignment):
         """
@@ -162,6 +200,7 @@ class CrosswordCreator():
         """
         raise NotImplementedError
 
+
     def select_unassigned_variable(self, assignment):
         """
         Return an unassigned variable not already part of `assignment`.
@@ -171,6 +210,7 @@ class CrosswordCreator():
         return values.
         """
         raise NotImplementedError
+
 
     def backtrack(self, assignment):
         """
