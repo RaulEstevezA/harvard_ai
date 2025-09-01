@@ -175,7 +175,7 @@ class CrosswordCreator():
         """
         # create queue of arcs
         deque_arcs = deque()
-        
+
 
         # initialize the queue
         if arcs is None:
@@ -216,13 +216,17 @@ class CrosswordCreator():
         return True   
 
 
-
     def assignment_complete(self, assignment):
         """
         Return True if `assignment` is complete (i.e., assigns a value to each
         crossword variable); return False otherwise.
         """
-        raise NotImplementedError
+        # check values in assignment
+        for value in self.crossword.variables:
+            if value not in assignment or assignment[value] is None:
+                return False
+            
+        return True
 
 
     def consistent(self, assignment):
