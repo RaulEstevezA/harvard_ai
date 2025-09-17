@@ -253,7 +253,7 @@ class CrosswordCreator():
                                 return False
         
         # check uniqueness of words
-        if len(assignment.var()) != len(set(assignment.var())):
+        if len(assignment.values()) != len(set(assignment.values())):
                 return False
             
         return True
@@ -277,7 +277,40 @@ class CrosswordCreator():
         degree. If there is a tie, any of the tied variables are acceptable
         return values.
         """
-        raise NotImplementedError
+        domain_size = float("inf")
+        candidate_var = []
+
+        # find minimum domain size among unassigned variables
+        for var in self.domains:
+            if var not in assignment:
+                size = len(self.domains[var])
+                if size < domain_size:
+                    domain_size = size
+
+        # collect all unassigned variables with that minimum domain size
+        for var in self.domains:
+            if var not in assignment and len(self.domains[var]) == domain_size:
+                candidate_var.append(var)
+    
+        # return None if haven't candidates
+        if len(candidate_var) == 0:
+            return None
+        
+        # if more than one candidate, break ties by degree
+        if len(candidate_var) > 1:
+            final_candidate = None
+            final_neighbors = -1
+            for var in candidate_var:
+                neighbors = self.crossword.neighbors(var)
+                unassigned_neighbors = {n for n in neighbors if n not in assignment}
+                degree = len(unassigned_neighbors)
+                if degree > final_neighbors:
+                    final_candidate = var
+                    final_neighbors = degree
+            return final_candidate
+        
+        # if exactly one candidate, return it
+        return candidate_var[0]
 
 
     def backtrack(self, assignment):
