@@ -88,8 +88,29 @@ These concepts are foundational for building agents that can operate effectively
 - [Heredity](./2-uncertainty/heredity)  
   Models genetic inheritance and trait expression in families. The program calculates joint probabilities that individuals have 0, 1, or 2 copies of a gene, and whether they exhibit a trait, taking into account inheritance from parents, mutation rates, and conditional probabilities. Results are normalized to produce valid probability distributions for each person.
 
-**[2 - Optimization](./3-optimization)**  
-_(to be completed)_
+**[3 - Optimization](./3-optimization)**  
+
+This unit introduces optimization as a way to solve complex problems by finding the best assignment of values under given constraints. Unlike search algorithms that explore paths in a graph, optimization methods often work directly with variables and domains, applying heuristics and consistency checks to prune the search space.
+
+- **Local search**:  
+  - Hill climbing and its variants (steepest ascent, stochastic, random restarts).  
+  - Exploration vs. exploitation trade-offs when navigating large state spaces.  
+
+- **Constraint Satisfaction Problems (CSPs)**:  
+  - Problems defined by variables, their domains, and constraints between them.  
+  - Unary and binary constraints, and techniques to enforce node and arc consistency.  
+  - The AC-3 algorithm for pruning inconsistent values from domains.  
+
+- **Heuristics for efficiency**:  
+  - Minimum Remaining Values (MRV) heuristic to select variables.  
+  - Degree heuristic as a tie-breaker.  
+  - Least Constraining Value (LCV) heuristic to order domain values.  
+
+These methods provide a framework for efficiently solving problems where brute-force search would be intractable, making optimization a central tool in artificial intelligence.
+
+**Exercises:**
+- [Crossword](./3-optimization/crossword)  
+  Generates crossword puzzles by modeling them as a constraint satisfaction problem. Each slot in the grid is a variable with words as its domain. The solver enforces node and arc consistency, applies heuristics (MRV, degree, LCV), and uses backtracking search to assign words in a way that satisfies all overlaps. The program outputs a completed crossword grid or reports when no solution exists.
 
 **4 - Learning**  
 _(to be completed)_
