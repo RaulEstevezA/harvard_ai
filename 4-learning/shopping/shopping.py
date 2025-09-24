@@ -59,7 +59,47 @@ def load_data(filename):
     labels should be the corresponding list of labels, where each label
     is 1 if Revenue is true, and 0 otherwise.
     """
-    raise NotImplementedError
+    data = [] # list of data
+    labels = [] # nlist of corresponding labels
+
+    # map month names to integer indices
+    months = {
+        "Jan": 0, "Feb": 1, "Mar": 2, "Apr": 3, "May": 4, "June": 5,
+        "Jul": 6, "Aug": 7, "Sep": 8, "Oct": 9, "Nov": 10, "Dec": 11
+    }
+
+    with open("shopping.csv") as f:
+        reader = csv.reader(f)
+        next(reader) # skip header row
+
+        for row in reader:
+
+            # build feature vector for this row (17 values)
+            file = [
+                int(row[0]),                                # Administrative
+                float(row[1]),                              # Administrative_Duration
+                int(row[2]),                                # Informational
+                float(row[3]),                              # Informational_Duration
+                int(row[4]),                                # ProductRelated
+                float(row[5]),                              # ProductRelated_Duration
+                float(row[6]),                              # BounceRates
+                float(row[7]),                              # ExitRates
+                float(row[8]),                              # PageValues
+                float(row[9]),                              # SpecialDay
+                months[row[10]],                            # Month (mapped to 0–11)
+                int(row[11]),                               # OperatingSystems
+                int(row[12]),                               # Browser
+                int(row[13]),                               # Region
+                int(row[14]),                               # TrafficType
+                1 if row[15] == "Returning_Visitor" else 0, # VisitorType
+                1 if row[16] == "TRUE" else 0,              # Weekend
+            ]
+        
+            # add file to data
+            data.append(file)
+
+            # add label
+            labels.append(1 if row[-1] == "TRUE" else 0)
 
 
 def train_model(evidence, labels):
