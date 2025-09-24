@@ -59,7 +59,7 @@ def load_data(filename):
     labels should be the corresponding list of labels, where each label
     is 1 if Revenue is true, and 0 otherwise.
     """
-    data = [] # list of data
+    evidence = [] # list of data
     labels = [] # nlist of corresponding labels
 
     # map month names to integer indices
@@ -68,7 +68,7 @@ def load_data(filename):
         "Jul": 6, "Aug": 7, "Sep": 8, "Oct": 9, "Nov": 10, "Dec": 11
     }
 
-    with open("shopping.csv") as f:
+    with open(filename) as f:
         reader = csv.reader(f)
         next(reader) # skip header row
 
@@ -96,10 +96,12 @@ def load_data(filename):
             ]
         
             # add file to data
-            data.append(file)
+            evidence.append(file)
 
             # add label
             labels.append(1 if row[-1] == "TRUE" else 0)
+    
+    return (evidence, labels)
 
 
 def train_model(evidence, labels):
@@ -107,7 +109,14 @@ def train_model(evidence, labels):
     Given a list of evidence lists and a list of labels, return a
     fitted k-nearest neighbor model (k=1) trained on the data.
     """
-    raise NotImplementedError
+    # initialize k-NN classifier with k = 1
+    model = KNeighborsClassifier(n_neighbors=1)
+
+    # fit the model to the training data (evidence as features, labels as outcomes)
+    model.fit(evidence, labels)
+
+    # return the trained model for later predictions
+    return model
 
 
 def evaluate(labels, predictions):
