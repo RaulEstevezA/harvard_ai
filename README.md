@@ -112,8 +112,32 @@ These methods provide a framework for efficiently solving problems where brute-f
 - [Crossword](./3-optimization/crossword)  
   Generates crossword puzzles by modeling them as a constraint satisfaction problem. Each slot in the grid is a variable with words as its domain. The solver enforces node and arc consistency, applies heuristics (MRV, degree, LCV), and uses backtracking search to assign words in a way that satisfies all overlaps. The program outputs a completed crossword grid or reports when no solution exists.
 
-**4 - Learning**  
-_(to be completed)_
+**[4 - Learning](./4-learning)**  
+
+This unit introduces machine learning, where systems improve their performance on a task through experience rather than being explicitly programmed. Learning allows AI to generalize from examples and make predictions about unseen data.
+
+- **Supervised learning**:  
+  - Training a model with labeled data to predict outcomes for new inputs.  
+  - Concepts of training, testing, overfitting, and generalization.  
+  - Evaluation metrics such as sensitivity (true positive rate) and specificity (true negative rate).  
+
+- **Nearest-neighbor classifiers**:  
+  - Predicting labels based on similarity to training examples.  
+  - k-nearest neighbors (k-NN) and the effect of different values of *k*.  
+
+- **Reinforcement learning**:  
+  - Agents learn strategies by interacting with an environment.  
+  - Concepts of states, actions, rewards, and policies.  
+  - Q-learning as a method to approximate optimal action-value functions.  
+
+These approaches form the foundation of many modern AI systems, from recommendation engines to game-playing agents, by allowing them to adapt and improve through data or interaction.
+
+**Exercises:**
+- [Shopping](./4-learning/shopping)  
+  Implements a supervised learning model using **k-nearest neighbors (k=1)** to predict whether a user will generate revenue on an online shopping website based on session data. The program loads and processes categorical and numerical features, trains the classifier, and evaluates it in terms of sensitivity and specificity.  
+
+- [Nim](./4-learning/nim)  
+  Implements a reinforcement learning agent that learns to play the game of Nim through self-play. The agent uses **Q-learning** to update its strategy, gradually improving performance and approaching optimal play without being explicitly programmed with the game’s solution.  
 
 **5 - Neural Networks**  
 _(to be completed)_
