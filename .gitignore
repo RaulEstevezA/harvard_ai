@@ -206,5 +206,37 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# MacOs
+# macOS system files
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# macOS thumbnail cache
+.Thumbnails
+.fseventsd
+.Spotlight-V100
+.Trashes
+
+# Python cache / build files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Logs
+*.log
+
+# Virtual environments
+venv/
+ENV/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
