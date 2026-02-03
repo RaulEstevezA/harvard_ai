@@ -89,6 +89,7 @@ class NimAI():
         self.alpha = alpha
         self.epsilon = epsilon
 
+
     def update(self, old_state, action, new_state, reward):
         """
         Update Q-learning model, given an old state, an action taken
@@ -98,6 +99,7 @@ class NimAI():
         old = self.get_q_value(old_state, action)
         best_future = self.best_future_reward(new_state)
         self.update_q_value(old_state, action, old, reward, best_future)
+
 
     def get_q_value(self, state, action):
         """
@@ -110,6 +112,7 @@ class NimAI():
             return self.q[(state, action)]
 
         return 0
+
 
     def update_q_value(self, state, action, old_q, reward, future_rewards):
         """
@@ -171,7 +174,26 @@ class NimAI():
         If multiple actions have the same Q-value, any of those
         options is an acceptable return value.
         """
-        raise NotImplementedError
+
+        actions = list(Nim.available_actions(state))
+
+        if not actions:
+            return None
+
+        if epsilon == True:
+            if random.random() < self.epsilon:
+                return random.choice(actions)
+
+        best_value = self.get_q_value(state, actions[0])
+        best_option = actions[0]
+
+        for action in actions:
+            option = self.get_q_value(state, action)
+            if option > best_value:
+                best_value = option
+                best_option = action
+
+        return best_option
 
 
 ########################
