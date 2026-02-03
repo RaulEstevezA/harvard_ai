@@ -2,9 +2,11 @@ import math
 import random
 import time
 
+
 ########################
 # DEFINICIONES
 ########################
+
 
 class Nim():
 
@@ -72,7 +74,6 @@ class Nim():
         if all(pile == 0 for pile in self.piles):
             self.winner = self.player
 
-
 class NimAI():
 
     def __init__(self, alpha=0.5, epsilon=0.1):
@@ -89,7 +90,6 @@ class NimAI():
         self.alpha = alpha
         self.epsilon = epsilon
 
-
     def update(self, old_state, action, new_state, reward):
         """
         Update Q-learning model, given an old state, an action taken
@@ -99,7 +99,6 @@ class NimAI():
         old = self.get_q_value(old_state, action)
         best_future = self.best_future_reward(new_state)
         self.update_q_value(old_state, action, old, reward, best_future)
-
 
     def get_q_value(self, state, action):
         """
@@ -112,7 +111,6 @@ class NimAI():
             return self.q[(state, action)]
 
         return 0
-
 
     def update_q_value(self, state, action, old_q, reward, future_rewards):
         """
@@ -131,7 +129,6 @@ class NimAI():
         """
 
         self.q[(tuple(state), action)] = old_q + self.alpha * ((reward + future_rewards) - old_q)
-
 
     def best_future_reward(self, state):
         """
@@ -158,7 +155,6 @@ class NimAI():
 
         return best
         
-
     def choose_action(self, state, epsilon=True):
         """
         Given a state `state`, return an action `(i, j)` to take.
@@ -199,6 +195,7 @@ class NimAI():
 ########################
 # Entrenamiento
 ########################
+
 
 def train(n):
     """
@@ -262,6 +259,7 @@ def train(n):
 ########################
 # Flujo de juego
 ########################
+
 
 def play(ai, human_player=None):
     """
