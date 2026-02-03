@@ -139,8 +139,35 @@ These approaches form the foundation of many modern AI systems, from recommendat
 - [Nim](./4-learning/nim/README.md)  
   Implements a reinforcement learning agent that learns to play the game of Nim through self-play. The agent uses **Q-learning** to update its strategy, gradually improving performance and approaching optimal play without being explicitly programmed with the game’s solution. 
 
-**5 - Neural Networks**  
-_(to be completed)_
+**[5 - Neural Networks](./5-neural_networks)**  
+
+This unit introduces artificial neural networks, a powerful class of machine learning models inspired by the structure of the human brain. Neural networks learn by adjusting weights in response to errors, allowing them to recognize complex patterns in data such as images, text, or game states.
+
+- **Neural network structure**:  
+  - Input layer, hidden layers, and output layer.  
+  - Neurons combine weighted inputs with a bias and apply an activation function.  
+
+- **Activation functions**:  
+  - Non-linear functions (such as sigmoid, ReLU, or tanh) that enable networks to model complex relationships.  
+
+- **Forward propagation**:  
+  - Computing predictions by passing inputs through the network layer by layer.  
+
+- **Loss functions**:  
+  - Measuring how far predictions are from the correct outputs, providing a signal for learning.  
+
+- **Backpropagation and gradient descent**:  
+  - Using derivatives to determine how each weight contributes to the error.  
+  - Updating weights in the direction that minimizes loss, controlled by a learning rate.  
+
+- **Deep learning**:  
+  - Neural networks with multiple hidden layers capable of learning high-level representations from raw data.  
+
+Together, these concepts show how neural networks can automatically learn features from data and improve through repeated training, forming the basis of many modern AI applications such as computer vision and pattern recognition.
+
+**Exercises:**
+- [Traffic](./5-neural-networks/traffic/README.md)  
+  Implements a convolutional neural network to classify traffic sign images. The model is trained on labeled image data and evaluated on unseen examples, demonstrating how neural networks can learn visual features directly from raw pixels.
 
 **6 - Language**  
 _(to be completed)_
