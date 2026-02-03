@@ -240,3 +240,6 @@ ENV/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints
+
+# data
+5-neural_networks/traffic/gtsrb/
