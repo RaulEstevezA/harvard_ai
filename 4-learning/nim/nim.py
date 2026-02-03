@@ -108,7 +108,7 @@ class NimAI():
         state = tuple(state)
         if (state, action) in self.q:
             return self.q[(state, action)]
-            
+
         return 0
 
     def update_q_value(self, state, action, old_q, reward, future_rewards):
@@ -126,7 +126,9 @@ class NimAI():
         `alpha` is the learning rate, and `new value estimate`
         is the sum of the current reward and estimated future rewards.
         """
-        raise NotImplementedError
+
+        self.q[(tuple(state), action)] = old_q + self.alpha * ((reward + future_rewards) - old_q)
+
 
     def best_future_reward(self, state):
         """
