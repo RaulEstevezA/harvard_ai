@@ -2,6 +2,9 @@ import math
 import random
 import time
 
+########################
+# DEFINICIONES
+########################
 
 class Nim():
 
@@ -101,7 +104,12 @@ class NimAI():
         Return the Q-value for the state `state` and the action `action`.
         If no Q-value exists yet in `self.q`, return 0.
         """
-        raise NotImplementedError
+
+        state = tuple(state)
+        if (state, action) in self.q:
+            return self.q[(state, action)]
+            
+        return 0
 
     def update_q_value(self, state, action, old_q, reward, future_rewards):
         """
@@ -149,6 +157,10 @@ class NimAI():
         """
         raise NotImplementedError
 
+
+########################
+# Entrenamiento
+########################
 
 def train(n):
     """
@@ -208,6 +220,10 @@ def train(n):
     # Return the trained AI
     return player
 
+
+########################
+# Flujo de juego
+########################
 
 def play(ai, human_player=None):
     """
