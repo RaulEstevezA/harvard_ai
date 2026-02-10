@@ -60,7 +60,7 @@ When running the AI, the game window displays the current board. The AI marks kn
 ## Direct Access
 
 - [**View the full source code**](./minesweeper.py)
-- [Back to main README](../../README.md)
+- [Back to main README](../../README_en.md)
 
 ## Author
 

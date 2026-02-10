@@ -46,7 +46,7 @@ Puzzle 3
 ## Direct Access
 
 - [**View the full source code**](./puzzle.py)
-- [Back to main README](../../README.md)
+- [Back to main README](../../README_en.md)
 
 ## Author
 

@@ -59,7 +59,7 @@ True Negative Rate: 0.90
 ## Direct Access
 
 - [**View the full source code**](./shopping.py)  
-- [Back to main README](../../README.md)  
+- [Back to main README](../../README_en.md)  
 
 ## Author
 

@@ -47,6 +47,12 @@ After comparing results across multiple runs, the final model achieved **stable 
 
 It is **recommended to use a Python virtual environment** to avoid dependency conflicts.
 
+Once the virtual environment is created and activated, install the required packages using the `requirements.txt` file included in the project:
+
+```bash
+pip install -r requirements.txt
+```
+
 ### Dataset Setup
 
 1. Download the GTSRB dataset from the following link:
@@ -84,6 +90,8 @@ Test accuracy: 0.9813
 Test loss: 0.0850
 ```
 
+![Training Result](../../images/traffic.png)
+
 ## Key Concepts Implemented
 
 - Convolutional Neural Networks (CNNs)
@@ -99,7 +107,7 @@ Test loss: 0.0850
 ## Direct Access
 
 - [**View the source code**](./traffic.py)  
-- [Back to main README](../../README.md)
+- [Back to main README](../../README_en.md)
 
 ## Author
 

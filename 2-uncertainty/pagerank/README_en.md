@@ -60,7 +60,7 @@ The values are similar across both methods, as expected.
 ## Direct Access
 
 - [**View the full source code**](./pagerank.py)
-- [Back to main README](../../README.md)
+- [Back to main README](../../README_en.md)
 
 ## Author
 

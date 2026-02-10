@@ -33,7 +33,7 @@ You will be prompted to enter two actor names. The program then outputs the degr
 ## Direct Access
 
 - [**View the full source code**](./degrees.py)
-- [Back to main README](../../README.md)
+- [Back to full README](../../README_en.md)
 
 ## Status
 

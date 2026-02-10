@@ -80,6 +80,11 @@ Lily
 - **Normalization** of probability distributions.
 - Iterating over all possible combinations using `powerset`.
 
+## Direct Access
+
+- [**View the full source code**](./heredity.py)
+- [Back to main README](../../README_en.md)
+
 ## Author
 
 This project was completed by [**Raul Estevez**](https://raulesteveza.github.io) as part of the CS50 AI course assignments.

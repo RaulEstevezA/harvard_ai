@@ -71,7 +71,7 @@ You can also print the crossword directly to the terminal by modifying the `main
 ## Direct Access
 
 - [**View the full source code**](./generate.py)  
-- [Back to main README](../../README.md)  
+- [Back to main README](../../README_en.md)  
 
 ## Author
 

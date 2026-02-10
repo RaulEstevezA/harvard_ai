@@ -41,7 +41,7 @@ You can play against the AI by selecting whether to be X or O.
 ## Direct Access
 
 - [**View the full source code**](./tictactoe.py)
-- [Back to main README](../../README.md)
+- [Back to main README](../../README_en.md)
 
 ## Status
 

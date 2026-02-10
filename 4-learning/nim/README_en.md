@@ -100,7 +100,7 @@ Q(s, a) ← Q(s, a) + α * ((reward + future_reward) − Q(s, a))
 ## Direct Access
 
 - [**View the full source code**](./nim.py)  
-- [Back to main README](../../README.md)
+- [Back to main README](../../README_en.md)
 
 ## Author
 
