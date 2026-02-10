@@ -166,11 +166,44 @@ This unit introduces artificial neural networks, a powerful class of machine lea
 Together, these concepts show how neural networks can automatically learn features from data and improve through repeated training, forming the basis of many modern AI applications such as computer vision and pattern recognition.
 
 **Exercises:**
-- [Traffic](./5-neural-networks/traffic/README.md)  
+- [Traffic](./5-neural-networks/traffic/README_en.md)  
   Implements a convolutional neural network to classify traffic sign images. The model is trained on labeled image data and evaluated on unseen examples, demonstrating how neural networks can learn visual features directly from raw pixels.
 
-**6 - Language**  
-_(to be completed)_
+## [6 - Language](./6-language)
+
+This unit introduces natural language processing (NLP), the area of artificial intelligence focused on enabling machines to understand, interpret, and generate human language. Language presents unique challenges for AI, as text is inherently sequential, ambiguous, and highly dependent on context.
+
+In this unit, different approaches are explored to model language structure and meaning, ranging from rule-based systems to modern neural network techniques.
+
+- **Language structure and grammar**  
+  - Representing sentences using grammatical rules and parse trees.  
+  - Understanding how words combine to form valid syntactic structures.
+
+- **Context and ambiguity**  
+  - Words and sentences can have multiple meanings depending on context.  
+  - Models must consider surrounding words to interpret meaning correctly.
+
+- **Sequence modeling**  
+  - Treating language as a sequence of tokens processed in order.  
+  - Capturing dependencies between earlier and later parts of a sentence.
+
+- **Neural approaches to language**  
+  - Using neural networks to learn patterns in text data.  
+  - Moving beyond fixed rules to data-driven representations of language.
+
+- **Attention mechanisms**  
+  - Allowing models to focus on the most relevant parts of a sentence.  
+  - Improving performance on tasks that require understanding long-range dependencies.
+
+Together, these ideas show how AI systems can process and reason about language, forming the foundation of applications such as translation, text summarization, and question answering.
+
+### Exercises
+
+- [Parser](./6-language/parser/README.md)  
+  Implements a context-free grammar parser that analyzes sentence structure and generates parse trees, demonstrating a rule-based approach to understanding language syntax.
+
+- [Attention](./6-language/attention/README.md)  
+  Uses neural networks with attention mechanisms to process language data, illustrating how models can dynamically focus on relevant parts of an input sequence to improve understanding.
 
 ---
 
