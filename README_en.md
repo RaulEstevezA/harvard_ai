@@ -213,5 +213,5 @@ Each exercise includes:
 - Any necessary datasets or test files
 - (Optionally) screenshots or output examples in the `/images` folder
 
-[Back to main README](./README.md)
+[← Back to main README](./README.md)
 
