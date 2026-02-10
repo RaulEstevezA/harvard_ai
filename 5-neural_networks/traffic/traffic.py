@@ -111,7 +111,7 @@ def get_model():
     ))
     model.add(tf.keras.layers.MaxPooling2D(pool_size=(2, 2)))
 
-    # second convolutional block
+    # third convolutional block
     model.add(tf.keras.layers.Conv2D(
         128, (3, 3),
         activation="relu"
