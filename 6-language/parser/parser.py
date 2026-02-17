@@ -30,6 +30,7 @@ VP -> V PP
 VP -> V NP PP
 VP -> Adv VP
 VP -> VP Adv
+VP -> VP Conj VP
 
 PP -> P NP
 """
@@ -120,7 +121,6 @@ def np_chunk(tree):
                 chunks.append(subtree)
 
     return chunks
-
 
 
 if __name__ == "__main__":
