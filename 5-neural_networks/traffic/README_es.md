@@ -111,4 +111,4 @@ Test loss: 0.0850
 
 ## Autor
 
-Este proyecto fue realizado por **Raul Estevez** como parte de los ejercicios del curso CS50 AI.
+Este proyecto fue realizado por [**Raul Estevez**](https://raulesteveza.github.io) como parte de los ejercicios del curso CS50 AI.

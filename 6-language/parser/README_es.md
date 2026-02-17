@@ -120,4 +120,4 @@ the armchair
 
 ## Autor
 
-Este proyecto fue realizado por **Raul Estevez** como parte de los ejercicios del curso CS50 AI.
+Este proyecto fue realizado por [**Raul Estevez**](https://raulesteveza.github.io) como parte de los ejercicios del curso CS50 AI.
