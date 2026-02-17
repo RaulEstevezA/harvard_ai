@@ -197,10 +197,10 @@ En conjunto, estas ideas muestran cómo los sistemas de IA pueden procesar y raz
 
 ### Ejercicios
 
-- [Parser](./6-language/parser/README_en.md)  
+- [Parser](./6-language/parser/README_es.md)  
   Implementa un analizador sintáctico basado en **gramáticas libres de contexto**, que analiza la estructura de las oraciones y genera árboles de análisis, demostrando un enfoque basado en reglas para comprender la sintaxis del lenguaje.
 
-- [Attention](./6-language/attention/README_en.md)  
+- [Attention](./6-language/attention/README_es.md)  
   Utiliza redes neuronales con **mecanismos de atención** para procesar datos lingüísticos, mostrando cómo los modelos pueden centrarse dinámicamente en las partes más relevantes de una secuencia de entrada para mejorar la comprensión.
 
 ---
