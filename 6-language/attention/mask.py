@@ -47,10 +47,15 @@ def get_mask_token_index(mask_token_id, inputs):
     """
     # TODO: Implement this function
 
+    # extract the actual token sequence
     input_ids = inputs["input_ids"][0]
 
+    # iterate through tokens while keeping track of their positions
     for posicion, token_id in enumerate(input_ids):
+
+        # check whether the current token matches the [MASK] token ID
         if token_id == mask_token_id:
+
             return posicion
     
     return None
@@ -63,7 +68,10 @@ def get_color_for_attention_score(attention_score):
     given `attention_score`. Each value should be in the range [0, 255].
     """
     # TODO: Implement this function
-    raise NotImplementedError
+
+    # scale the attention score (0–1) to the RGB intensity range (0–255) and return a shade of gray
+    number = int(attention_score * 255)
+    return (number, number, number)
 
 
 
