@@ -49,7 +49,9 @@ True Positive Rate: 0.38
 True Negative Rate: 0.90
 ```
 
-![Resultado de Shopping](../../images/shopping.png)
+<p align="center">
+  <img src="../../images/shopping.png" alt="Resultado de Shopping" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Archivos
 

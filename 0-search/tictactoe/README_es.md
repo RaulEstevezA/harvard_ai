@@ -29,7 +29,9 @@ Puedes jugar contra la IA eligiendo si quieres ser X u O.
 
 ## Ejemplo de salida
 
-![Salida de Tic Tac Toe](../../images/tictactoe.png)
+<p align="center">
+  <img src="../../images/tictactoe.png" alt="Salida de Tic Tac Toe" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Archivos
 

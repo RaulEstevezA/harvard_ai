@@ -67,7 +67,9 @@ Lily
 
 *(Los valores pueden variar ligeramente debido a la precisión de los cálculos en coma flotante.)*
 
-![Salida del programa](../../images/heredity.png)
+<p align="center">
+  <img src="../../images/heredity.png" alt="Salida del programa" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Archivos incluidos
 - **`heredity.py`** → Programa principal que implementa el algoritmo.

@@ -78,7 +78,9 @@ Game Over!
 Winner is: AI
 ```
 
-![Resultado de Nim](../../images/nim.png)
+<p align="center">
+  <img src="../../images/nim.png" alt="Resultado de Nim" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Conceptos clave implementados
 

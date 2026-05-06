@@ -71,7 +71,9 @@ El programa genera múltiples archivos PNG que representan los patrones de atenc
 
 Cada diagrama corresponde a una capa del transformador y a una cabeza de atención. Las celdas más claras representan mayores puntuaciones de atención, mientras que las más oscuras indican menor atención.
 
-![Result](../../images/attention.png)
+<p align="center">
+  <img src="../../images/attention.png" alt="Result" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Conceptos Clave Implementados
 

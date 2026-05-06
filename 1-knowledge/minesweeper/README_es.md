@@ -47,7 +47,9 @@ La IA realiza movimientos automáticamente cuando es su turno.
 
 Al ejecutar la IA, la ventana del juego muestra el tablero actual. La IA marca las minas conocidas con banderas y revela celdas seguras, evitando las minas siempre que sea lógicamente posible.
 
-![Salida del programa](../../images/minesweeper.png)
+<p align="center">
+  <img src="../../images/minesweeper.png" alt="Salida del programa" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Archivos
 

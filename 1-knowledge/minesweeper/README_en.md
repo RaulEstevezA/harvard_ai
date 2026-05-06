@@ -48,7 +48,9 @@ The AI will make moves automatically when it is its turn.
 When running the AI, the game window displays the current board. The AI marks known mines with flags and reveals safe cells, avoiding mines whenever logically possible.
 
 
-![Program Output](../../images/minesweeper.png)
+<p align="center">
+  <img src="../../images/minesweeper.png" alt="Program Output" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 
 ## Files

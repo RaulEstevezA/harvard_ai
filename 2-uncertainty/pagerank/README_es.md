@@ -48,7 +48,9 @@ Resultados de PageRank por Iteración
 
 Los valores obtenidos por ambos métodos son similares, como era de esperar.
 
-![Salida del programa](../../images/pagerank.png)
+<p align="center">
+  <img src="../../images/pagerank.png" alt="Salida del programa" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Archivos incluidos
 

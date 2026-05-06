@@ -99,7 +99,9 @@ holmes
 the armchair
 ```
 
-![Result](../../images/parser.png)
+<p align="center">
+  <img src="../../images/parser.png" alt="Result" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Key Concepts Implemented
 

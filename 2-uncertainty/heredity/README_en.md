@@ -66,7 +66,9 @@ Lily
 *(Values may vary slightly depending on floating-point precision.)*
 
 
-![Program Output](../../images/heredity.png)
+<p align="center">
+  <img src="../../images/heredity.png" alt="Program Output" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Files Included
 - **heredity.py** → The main program implementing the algorithm.

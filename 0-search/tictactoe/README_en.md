@@ -29,7 +29,9 @@ You can play against the AI by selecting whether to be X or O.
 
 ## Example Output
 
-![Tic Tac Toe Output](../../images/tictactoe.png)
+<p align="center">
+  <img src="../../images/tictactoe.png" alt="Tic Tac Toe Output" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Files
 

@@ -35,7 +35,9 @@ Puzzle 3
     CKnight
 ```
 
-![Salida del programa](../../images/knights.png)
+<p align="center">
+  <img src="../../images/knights.png" alt="Salida del programa" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Archivos
 

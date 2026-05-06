@@ -71,7 +71,9 @@ The program generates multiple PNG files representing attention patterns:
 
 Each diagram corresponds to one transformer layer and one attention head. Lighter cells represent higher attention scores, while darker cells represent lower scores.
 
-![Result](../../images/attention.png)
+<p align="center">
+  <img src="../../images/attention.png" alt="Result" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Key Concepts Implemented
 

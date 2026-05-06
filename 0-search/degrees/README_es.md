@@ -22,7 +22,9 @@ Se te pedirá que introduzcas los nombres de dos actores. El programa mostrará 
 
 ## Ejemplo de salida
 
-![Salida del programa](../../images/degrees.png)
+<p align="center">
+  <img src="../../images/degrees.png" alt="Salida del programa" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Archivos
 

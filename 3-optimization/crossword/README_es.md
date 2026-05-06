@@ -59,9 +59,13 @@ También puedes mostrar el crucigrama directamente por consola modificando la fu
 ██████████████
 ```
 
-![Vista del editor](../../images/crossword1.png)
+<p align="center">
+  <img src="../../images/crossword1.png" alt="Vista del editor" width="600" style="max-width: 100%; height: auto;">
+</p>
 
-![Resultado del crucigrama](../../images/crossword2.png)
+<p align="center">
+  <img src="../../images/crossword2.png" alt="Resultado del crucigrama" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Archivos
 

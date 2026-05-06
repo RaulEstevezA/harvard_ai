@@ -22,7 +22,9 @@ You will be prompted to enter two actor names. The program then outputs the degr
 
 ## Example Output
 
-![Program Output](../../images/degrees.png)
+<p align="center">
+  <img src="../../images/degrees.png" alt="Program Output" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Files
 

@@ -90,7 +90,9 @@ Test accuracy: 0.9813
 Test loss: 0.0850
 ```
 
-![Training Result](../../images/traffic.png)
+<p align="center">
+  <img src="../../images/traffic.png" alt="Training Result" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Key Concepts Implemented
 

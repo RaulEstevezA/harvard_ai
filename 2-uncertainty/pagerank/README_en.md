@@ -47,7 +47,9 @@ PageRank Results from Iteration
 The values are similar across both methods, as expected.
 
 
-![Program Output](../../images/pagerank.png)
+<p align="center">
+  <img src="../../images/pagerank.png" alt="Program Output" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 
 ## Files

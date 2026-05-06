@@ -57,9 +57,13 @@ You can also print the crossword directly to the terminal by modifying the `main
 ██████████████
 ```
 
-![Editor View](../../images/crossword1.png)
+<p align="center">
+  <img src="../../images/crossword1.png" alt="Editor View" width="600" style="max-width: 100%; height: auto;">
+</p>
 
-![Crossword Result](../../images/crossword2.png)
+<p align="center">
+  <img src="../../images/crossword2.png" alt="Crossword Result" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Files
 

@@ -35,7 +35,9 @@ Puzzle 3
     CKnight
 ```
 
-![Program Output](../../images/knights.png)
+<p align="center">
+  <img src="../../images/knights.png" alt="Program Output" width="600" style="max-width: 100%; height: auto;">
+</p>
 
 ## Files
 
