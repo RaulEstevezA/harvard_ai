@@ -20,7 +20,7 @@ These documents provide an in-depth description of each unit, the concepts cover
 
 ---
 
-**Author:** Raul Estevez  
+**Author:** [Raul Estevez](https://raulesteveza.github.io/)  
 **Course:** CS50's Introduction to Artificial Intelligence with Python  
 **Institution:** Harvard University
 
